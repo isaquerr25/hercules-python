@@ -8,9 +8,7 @@ services:
     env_file:
       - ./.db.env.example
     volumes:
-      - type: bind
-        source: ./docker-db
-        target: /var/lib/postgresql/data/
+      - ./data/postgres:/var/lib/postgresql/data
     networks:
       - hercules_network
   web:

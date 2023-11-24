@@ -164,6 +164,7 @@ config.json
 .env
 .db.env
 /docker-db/
+/data/
 /logs/
 /media/
 /static/
