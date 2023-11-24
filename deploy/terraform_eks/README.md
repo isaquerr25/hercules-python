@@ -67,7 +67,7 @@ Pegar o kubeconfig
 ```sh {"id":"01HG1J46242BGJESCS55NBZ8PD"}
 aws sts get-caller-identity
 
-aws eks --region us-east-2 update-kubeconfig --name <NOME_CLUSTER>
+aws eks --region us-west-1 update-kubeconfig --name <NOME_CLUSTER>
 
 cat ~/.kube/config
 ```
@@ -80,24 +80,24 @@ apiVersion: v1
 clusters:
 - cluster:
     certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1ETXlNVEUzTXpNd01Wb1hEVE14TURNeE9URTNNek13TVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT0VLCmNxdXY2bENxWnZLNE9GS0Q4endwMEE2S2dUaWdFYktDek5wTVA2NVdOUXV0eEpRUEs2cmpXWEtXZlBLNnRhcXAKVGxaanJzcXAyeU1XTjdiSjZ3WEc4bGtIOW5qenpLdzFBK2h1azBkb1Nvb3dWM2tUczBnV2J0bEhTZWVHT0dQbwppNWYzRzBoSUJadDl6QkJWSWM2SGZtbzQ3WmFWdTA3OHlRWGhPcExvMnJVeDh1M245NjRROEtsbHlXY1phUUpsCkEranFqaW5JT1p1MmNNZlZzT0lSQzJpbjhQZFhkTzJHcUJ6M3IvYktnTko3bjNLd0xnWjNVMFg3Szg5V0dDejUKc1YzM0Q0NE5OZzV1TG0yNTdkb2VOTE5IU3lQa09JZjdrZGIwQldscGpQWmp3dFIraTlFcmZqbFRXRk1rVkdoYgo1dkgyRUdpYUZNSmcrV0Z3UUtzQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFEbGFGaXhCQ2oyaTk0Z3VZT2RhT1RGRjRhVVQKR1k0OXE3eC8vL2JOTGx6aUpVdG8xbUFUN0FZQlkwNEJ3bjlCZGVjb2hTa3I2NEg3UnNNQmpCREZGbncyZUVSNQpjTkowQVRSY0lqN2x3dzJxaThRSzI3L3VnTUV5UDQvNk5aU29zWmFzYUtqblBseEZOQVFpY3Y3RG1hYzhFTUxXCkdoN2krU1FMVGdhdUVYR2lOUzJzU25tOXorMHNHRE9BeXJwdVF0UmN1ZFl5QkZ2NXNtZVFEMW1XVUhZNGRrNEgKV25tTE5sbXV6N2hEVVFJN05ic2tsK243MS8xYlBxOVlDWllwb0N0NHdyV1VtaFRDT3h0ckprc1g2ZDlyTmpWaApKUWZRbDJJTFYydEZwVklhKy8wUmN0azhZZnU4bUZtblJaNGNKejMwdndiM1BEeDN2OG0yZmdXUGJRcz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
-    server: https://0B29EF8DE893484EB8D0C75C4597DCE4.gr7.us-east-2.eks.amazonaws.com
-  name: arn:aws:eks:us-east-2:984102645395:cluster/remessaonline-eks-iNwcOCRA
+    server: https://0B29EF8DE893484EB8D0C75C4597DCE4.gr7.us-west-1.eks.amazonaws.com
+  name: arn:aws:eks:us-west-1:984102645395:cluster/remessaonline-eks-iNwcOCRA
 contexts:
 - context:
-    cluster: arn:aws:eks:us-east-2:984102645395:cluster/remessaonline-eks-iNwcOCRA
-    user: arn:aws:eks:us-east-2:984102645395:cluster/remessaonline-eks-iNwcOCRA
-  name: arn:aws:eks:us-east-2:984102645395:cluster/remessaonline-eks-iNwcOCRA
-current-context: arn:aws:eks:us-east-2:984102645395:cluster/remessaonline-eks-iNwcOCRA
+    cluster: arn:aws:eks:us-west-1:984102645395:cluster/remessaonline-eks-iNwcOCRA
+    user: arn:aws:eks:us-west-1:984102645395:cluster/remessaonline-eks-iNwcOCRA
+  name: arn:aws:eks:us-west-1:984102645395:cluster/remessaonline-eks-iNwcOCRA
+current-context: arn:aws:eks:us-west-1:984102645395:cluster/remessaonline-eks-iNwcOCRA
 kind: Config
 preferences: {}
 users:
-- name: arn:aws:eks:us-east-2:984102645395:cluster/remessaonline-eks-iNwcOCRA
+- name: arn:aws:eks:us-west-1:984102645395:cluster/remessaonline-eks-iNwcOCRA
   user:
     exec:
       apiVersion: client.authentication.k8s.io/v1alpha1
       args:
       - --region
-      - us-east-2
+      - us-west-1
       - eks
       - get-token
       - --cluster-name
