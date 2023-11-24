@@ -3,7 +3,7 @@ on:
   push:
     branches:
     - master
-  pull_request:
+  pull_request: 
 jobs:
   BuildAndPushImageToECR:
     name: "Build and Push to ECR"
