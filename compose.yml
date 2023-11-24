@@ -6,7 +6,7 @@ services:
     ports:
       - 45432:5432
     env_file:
-      - ./.db.env
+      - ./.db.env.example
     volumes:
       - type: bind
         source: ./docker-db
@@ -35,8 +35,8 @@ services:
     networks:
       - hercules_network
     env_file:
-      - ./.env
-      - ./.db.env
+      - ./.env.example
+      - ./.db.env.example
   redis:
     image: redis
     expose:
