@@ -18,15 +18,9 @@ services:
     ports:
       - 3333:3333
     volumes:
-      - type: bind
-        source: ./logs
-        target: /code/logs
-      - type: bind
-        source: ./media
-        target: /code/media
-      - type: bind
-        source: ./static
-        target: /code/static
+      - ./logs:/code/logs
+      - ./media:/code/media
+      - ./static:/code/static
     depends_on:
       - db
       - redis
