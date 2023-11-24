@@ -4,7 +4,6 @@ WORKDIR /code
 
 # Installing build requirements
 RUN apt update
-RUN apt upgrade
 
 # Configuring locale and timezones
 RUN apt install locales -y

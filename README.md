@@ -49,3 +49,16 @@ You can test the project [here](https://hercules.vitorwdson.dev/)
 
       - [x] Status Changes
       - [x] Title Changes
+
+- [ ] Infra
+  - [ ] Image Docker
+  - [ ] Kubernet
+    - [ ] deployments
+    - [ ] hpa
+    - [ ] svc
+    - [ ] service
+  - [ ] Terradorm
+    - [ ] ec2
+    - [ ] subnet
+  - [ ] AWS
+    - [ ] Access external

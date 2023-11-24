@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: web
+          image: 104108699856.dkr.ecr.us-east-1.amazonaws.com/hercules:latest
+          imagePullPolicy: Always
+          command: ['supervisord', '-c', '/code/supervisord.conf', '-n']
+          envFrom:
+            - configMapRef:
+                name: hercules-configmap
+            - secretRef:
+                name: django-secret
+            - secretRef:
+                name: postgres-secret
+          ports:
+            - containerPort: 3333
+          volumeMounts:
+            - name: logs-volume
+              mountPath: /code/logs
+            - name: media-volume
+              mountPath: /code/media
+            - name: static-volume
+              mountPath: /code/static
+
+      volumes:
+        - name: logs-volume
+          persistentVolumeClaim:
+            claimName: logs-pvc
+        - name: media-volume
+          persistentVolumeClaim:
+            claimName: media-pvc
+        - name: static-volume
+          persistentVolumeClaim:
+            claimName: static-pvc
