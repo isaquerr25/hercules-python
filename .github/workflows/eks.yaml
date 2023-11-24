@@ -3,13 +3,9 @@ name: 'Terraform CI'
 on:
   push:
     branches: ['main']
-    paths:
-      - deploy/terraform_eks/eks/**
 
   pull_request:
     branches: ['main']
-    paths:
-      - deploy/terraform_eks/eks/**
 
 jobs:
   terraform:
@@ -19,7 +15,7 @@ jobs:
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
-        working-directory: eks
+        working-directory: deploy/terraform_eks/eks
         shell: bash
 
     steps:
