@@ -1,9 +1,9 @@
-name: "Build and push to ECR"
+name: Docker Compose Actions Workflow
 on:
   push:
-    branches:
-    - master
+    branches: ['main']
   pull_request:
+    branches: ['main']
 jobs:
   BuildAndPushImageToECR:
     name: "Build and Push to ECR"
