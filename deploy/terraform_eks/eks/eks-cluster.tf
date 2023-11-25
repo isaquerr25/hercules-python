@@ -2,7 +2,7 @@ module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = local.cluster_name
   cluster_version = "1.18"
-  subnet_ids            = module.vpc.public_subnets
+  subnet_ids      = module.vpc.public_subnets
   tags = {
     Environment = "training"
     GithubRepo  = "terraform-aws-eks"
@@ -11,14 +11,14 @@ module "eks" {
 
   vpc_id = module.vpc.vpc_id
 
-  eks_managed_node_group_defaults  = {
+  eks_managed_node_group_defaults = {
     root_volume_type = "gp2"
   }
   eks_managed_node_groups = {
     one = {
-      name = "worker-group-1"
+      name                          = "worker-group-1"
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-      instance_types = ["t2.small"]
+      instance_types                = ["t2.small"]
       additional_userdata           = "echo foo bar"
 
       //min_size     = 1
@@ -27,9 +27,9 @@ module "eks" {
     }
 
     two = {
-      name = "worker-group-2"
+      name                          = "worker-group-2"
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
-      instance_types = ["t2.medium"]
+      instance_types                = ["t2.medium"]
       additional_userdata           = "echo foo bar"
       //min_size     = 1
       //max_size     = 3
