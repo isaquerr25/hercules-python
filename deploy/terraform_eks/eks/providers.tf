@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "terraform-deploy-isaque"
+    bucket = "julio-test"
     key    = "saddddddd"
-    region = "us-west-1"
+    region = "us-east-1"
   }
 }
 
