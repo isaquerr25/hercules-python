@@ -19,7 +19,7 @@ resource "random_string" "suffix" {
 }
 
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
+  source  = "terraform-aws-modules/vpc/aws" 
   version = "2.66.0"
 
   name                 = "devops-ninja-vpc"
